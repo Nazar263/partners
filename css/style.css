@@ -91,8 +91,8 @@ button {
 }
 
 .brand__logo-icon {
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
     object-fit: contain;
 
 }
@@ -828,8 +828,8 @@ button {
     }
 
     .brand__logo-icon {
-        width: 3.6rem;
-        height: 3.6rem;
+        width: 6rem;
+        height: 6rem;
         margin-right: 0.8rem;
     }
 
@@ -1184,8 +1184,8 @@ body.menu-open { overflow: hidden; }
     }
 
     .brand__logo-icon {
-        width: 3.2rem;
-        height: 3.2rem;
+        width: 4rem;
+        height: 4rem;
     }
 
     .brand__logo {
