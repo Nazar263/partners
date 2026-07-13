@@ -4,93 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freelance UA | Partner Program.</title>
+    <meta name="description" content="Freelance UA Partner Network — digital-проєкти під ключ: IT, Design, Video.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container header__inner">
-            <a href="#top" class="brand">
-                <img class="brand__logo-icon" src="css/images/logo.svg" alt="Freelance UA logo">
-                <div class="brand__text">
-                    <span class="brand__logo">Freelance UA</span>
-                    <span class="brand__subtitle">Partner Network</span>
-                </div>
+    <!-- ═══ SITE BACKDROP ═══ -->
+    <div class="site-backdrop" aria-hidden="true">
+        <div class="site-backdrop__grid"></div>
+        <div class="site-backdrop__scan"></div>
+        <canvas class="site-backdrop__bokeh" id="bokeh-canvas"></canvas>
+        <div class="site-backdrop__orb site-backdrop__orb--main"></div>
+        <div class="site-backdrop__orb site-backdrop__orb--soft"></div>
+        <div class="site-backdrop__glow site-backdrop__glow--left"></div>
+        <div class="site-backdrop__glow site-backdrop__glow--right"></div>
+        <div class="site-backdrop__nodes">
+            <span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span>
+            <span style="--i:3"></span><span style="--i:4"></span><span style="--i:5"></span>
+            <span style="--i:6"></span><span style="--i:7"></span><span style="--i:8"></span>
+            <span style="--i:9"></span><span style="--i:10"></span><span style="--i:11"></span>
+        </div>
+    </div>
 
+    <!-- ═══ HEADER ═══ -->
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="#hero" class="brand">
+                <img class="brand__logo-icon" src="css/images/logo.svg" alt="Freelance UA" width="40" height="40">
+                <div class="brand__text">
+                    Freelance UA<br>
+                    <span>Digital Agency</span>
+                </div>
             </a>
-            <nav id="main-nav" class="nav" aria-label="Main navigation" aria-hidden="true">
-                <a class="nav__link" href="#about">About</a>
-                <a class="nav__link" href="#services">Services</a>
-                <a class="nav__link" href="#partnership">Partnership</a>
-                <a class="nav__link" href="#why">Why us</a>
-                <a class="nav__link" href="#contact">Contact</a>
-                <a class="button button--primary button--nav" href="https://t.me/PREMIUM1914" target="_blank" rel="noopener noreferrer"><img class="button__icon" src="css/images/tg.svg" alt="Telegram"> Telegram</a>
-            
+
+            <nav class="nav-desktop">
+                <a class="nav-link" href="#about">Про нас</a>
+                <a class="nav-link" href="#services">Послуги</a>
+                <a class="nav-link" href="#partnership">Співпраця</a>
+                <a class="nav-link" href="#why">Чому ми</a>
+                <a class="nav-link" href="#contact">Контакти</a>
             </nav>
-            <div class="header__actions">
-                <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+
+            <div class="header-cta">
+                <a class="btn btn--primary btn--small" href="https://t.me/PREMIUM1914" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                    Telegram
+                </a>
             </div>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
         </div>
     </header>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobile-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <a class="nav-link" href="#about">Про нас</a>
+        <a class="nav-link" href="#services">Послуги</a>
+        <a class="nav-link" href="#partnership">Співпраця</a>
+        <a class="nav-link" href="#why">Чому ми</a>
+        <a class="nav-link" href="#contact">Контакти</a>
+        <a class="btn btn--primary" href="https://t.me/PREMIUM1914" target="_blank" rel="noopener noreferrer" style="margin-top:1.2rem;text-align:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            Telegram
+        </a>
+    </div>
+
     <main>
-        <section class="hero" id="top">
-            <div class="hero__decor">
-                <span class="hero__glow hero__glow--blue"></span>
-                <span class="hero__glow hero__glow--purple"></span>
-                <span class="hero__grid"></span>
-            </div>
-            <div class="container hero__content reveal">
-                <span class="badge">Freelance UA Partner Network</span>
-                <h1>Partner Program for Digital Growth</h1>
-                <p class="hero__text">Ми закриваємо digital-проєкти під ключ: IT, Design, Video. Співпрацюємо з агентствами та фахівцями по моделі обміну лідами.</p>
-                <div class="hero__actions">
-                    <a class="button button--primary button--glow" href="https://t.me/PREMIUM1914" target="_blank" rel="noopener noreferrer"><img class="button__icon" src="css/images/tg.svg" alt="Telegram"> Написати в Telegram</a>
-                    <span class="hero__note">Відповідаємо протягом 10–20 хвилин</span>
+        <!-- ═══ HERO ═══ -->
+        <section class="hero" id="hero">
+            <div class="hero__ambient"></div>
+            <div class="hero__grid"></div>
+            <div class="hero__bottom-fade"></div>
+
+            <div class="hero__particles" id="hero-particles"></div>
+
+            <div class="hero__content">
+                <div class="hero__pill" id="hero-pill">
+                    <span class="hero__pill-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </span>
+                    Freelance UA Partner Network
+                </div>
+
+                <h1 class="hero__title" id="hero-title">
+                    <span class="hero__title-line">
+                        <span class="hero__title-word">Partner</span>
+                        <span class="hero__title-word">Program</span>
+                    </span>
+                    <span class="hero__title-gradient" id="hero-gradient">for Digital Growth</span>
+                </h1>
+
+                <p class="hero__subtitle" id="hero-subtitle">
+                    Ми закриваємо digital-проєкти під ключ: IT, Design, Video. Співпрацюємо з агентствами та фахівцями по моделі обміну лідами.
+                </p>
+
+                <div class="hero__buttons" id="hero-buttons">
+                    <a class="btn btn--primary" href="https://t.me/PREMIUM1914" target="_blank" rel="noopener noreferrer">
+                        <svg class="hero__btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                        Написати в Telegram
+                    </a>
+                    <a class="btn btn--secondary" href="#about">
+                        Дізнатися більше
+                    </a>
+                </div>
+
+                <div class="hero__stats" id="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-card__number">10+</div>
+                        <div class="stat-card__label">Спеціалістів</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number">100+</div>
+                        <div class="stat-card__label">Закритих проєктів</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number">10%</div>
+                        <div class="stat-card__label">Винагорода партнера</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section about reveal" id="about">
-            <div class="container">
-                <div class="section-heading">
-                    <span class="eyebrow">Хто ми</span>
-                    <h2>Ми — Freelance UA || Digital Agency</h2>
-                    <p> Kоманда спеціалістів у сфері розробки, дизайну та відео. Беремо на себе повний цикл роботи: планування → реалізація → запуск.</p>
+        <div class="section-divider"></div>
+
+        <!-- ═══ ABOUT ═══ -->
+        <section class="section section--alt" id="about">
+            <div class="section__inner">
+                <div class="section__header reveal reveal--blur">
+                    <div class="section__eyebrow">Хто ми</div>
+                    <h2 class="section__title">Ми — Freelance UA || Digital Agency</h2>
+                    <p class="section__desc">Команда спеціалістів у сфері розробки, дизайну та відео. Беремо на себе повний цикл роботи: планування → реалізація → запуск.</p>
                 </div>
-                <div class="about__layout">
-                    <div class="about__text">
-                        <div class="about__text-card">
-                            <div class="about__text-card__header">
-                                <span class="eyebrow eyebrow--soft">Партнерський діджитал</span>
-                                <h3>Ми будуємо digital-партнерство на результаті</h3>
-                            </div>
-                            <p>Працюємо швидко, структуровано і з фокусом на результат. Наша команда допомагає партнерам масштабувати бізнес через якісний digital та обмін лідами.</p>
-                            <div class="about__text-card__grid">
-                                <div class="about__text-card__copy">
+
+                <div class="about-grid">
+                    <div class="card card--surface about-main reveal">
+                        <div class="about-main__inner">
+                            <div class="about-main__eyebrow">Партнерський діджитал</div>
+                            <h3 class="about-main__title">Ми будуємо digital-партнерство на результаті</h3>
+                            <p class="about-main__text">Працюємо швидко, структуровано і з фокусом на результат. Наша команда допомагає партнерам масштабувати бізнес через якісний digital та обмін лідами.</p>
+                            <div class="about-main__grid">
+                                <div class="about-main__copy">
                                     <p>Підхід Freelance UA — це прозора комунікація, чітке планування та запуск з урахуванням бізнес-цілей.</p>
-                                    <ul class="about__list">
+                                    <ul class="about-main__list">
                                         <li>Плануємо й реалізовуємо digital-продукти від ідеї до запуску</li>
                                         <li>Працюємо з агентствами, маркетологами та фрілансерами</li>
                                         <li>Точна передача лідів та вигідна партнерська модель</li>
                                     </ul>
                                 </div>
-                                <div class="about__text-card__highlights">
-                                    <div class="highlight-pill">
+                                <div class="about-pills">
+                                    <div class="pill-card">
                                         <strong>Partner first</strong>
                                         <span>Проста модель: ваші ліди + наш закритий проєкт.</span>
                                     </div>
-                                    <div class="highlight-pill">
+                                    <div class="pill-card">
                                         <strong>Швидкий старт</strong>
                                         <span>Готові до старту з першого контакту та швидкого запуску.</span>
                                     </div>
-                                    <div class="highlight-pill">
+                                    <div class="pill-card">
                                         <strong>Прозоре партнерство</strong>
                                         <span>Чіткі умови, стабільна винагорода та довіра.</span>
                                     </div>
@@ -98,38 +173,41 @@
                             </div>
                         </div>
                     </div>
-                    <div class="cards cards--about">
-                        <article class="card">
-                            <span class="card__icon">10+</span>
-                            <h3>Спеціалістів</h3>
-                            <p>Досвідчені розробники, дизайнери та відео-експерти.</p>
-                        </article>
-                        <article class="card">
-                            <span class="card__icon">Team</span>
-                            <h3>Expert Profiles</h3>
-                            <p>Покриваємо всі ключові напрямки digital-рішень.</p>
-                        </article>
-                        <article class="card">
-                            <span class="card__icon">100+</span>
-                            <h3>Закритих проєктів</h3>
-                            <p>Гнучка команда з перевіреною історією успішних проєктів.</p>
-                        </article>
+
+                    <div class="card about-stat reveal">
+                        <div class="about-stat__number">10+</div>
+                        <div class="about-stat__title">Спеціалістів</div>
+                        <div class="about-stat__desc">Досвідчені розробники, дизайнери та відео-експерти.</div>
+                    </div>
+                    <div class="card about-stat reveal">
+                        <div class="about-stat__number">Team</div>
+                        <div class="about-stat__title">Expert Profiles</div>
+                        <div class="about-stat__desc">Покриваємо всі ключові напрямки digital-рішень.</div>
+                    </div>
+                    <div class="card about-stat reveal" style="grid-column: 1 / -1;">
+                        <div class="about-stat__number">100+</div>
+                        <div class="about-stat__title">Закритих проєктів</div>
+                        <div class="about-stat__desc">Гнучка команда з перевіреною історією успішних проєктів.</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section services reveal" id="services">
-            <div class="container">
-                <div class="section-heading">
-                    <span class="eyebrow">Послуги</span>
-                    <h2>Що ми пропонуємо</h2>
+        <!-- ═══ SERVICES ═══ -->
+        <section class="section" id="services">
+            <div class="section__inner">
+                <div class="section__header reveal reveal--blur">
+                    <div class="section__eyebrow">Послуги</div>
+                    <h2 class="section__title">Що ми пропонуємо</h2>
                 </div>
-                <div class="service-grid">
-                    <article class="service-card">
-                        <div class="service-card__icon">IT</div>
-                
-                        <ul class="service-list">
+
+                <div class="services-grid">
+                    <article class="service-card reveal reveal--scale">
+                        <div class="service-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <h3 class="service-card__title">Розробка</h3>
+                        <ul class="service-card__list">
                             <li>Telegram-боти</li>
                             <li>Веб-сайти та лендінги</li>
                             <li>CRM-системи</li>
@@ -138,10 +216,12 @@
                             <li>Мобільна розробка</li>
                         </ul>
                     </article>
-                    <article class="service-card">
-                        <div class="service-card__icon">Design</div>
-                       
-                        <ul class="service-list">
+                    <article class="service-card reveal reveal--scale">
+                        <div class="service-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><path d="M17.5 10.5 21 7l-3.5-3.5L14 3.5"/><circle cx="6" cy="18" r="3"/><path d="M9 15 3 9l3.5-3.5L10 9"/><circle cx="18" cy="18" r="3"/><path d="m15 12 3.5 3.5L15 19"/></svg>
+                        </div>
+                        <h3 class="service-card__title">Дизайн</h3>
+                        <ul class="service-card__list">
                             <li>Графічний дизайн</li>
                             <li>Брендинг та логотипи</li>
                             <li>YouTube-банери</li>
@@ -149,10 +229,12 @@
                             <li>Презентації</li>
                         </ul>
                     </article>
-                    <article class="service-card">
-                        <div class="service-card__icon">Video</div>
-                      
-                        <ul class="service-list">
+                    <article class="service-card reveal reveal--scale">
+                        <div class="service-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                        </div>
+                        <h3 class="service-card__title">Відео</h3>
+                        <ul class="service-card__list">
                             <li>Відеомонтаж</li>
                             <li>Моушн-дизайн</li>
                             <li>Reels та Shorts</li>
@@ -164,68 +246,125 @@
             </div>
         </section>
 
-        <section class="section partnership reveal" id="partnership">
-            <div class="container">
-                <div class="section-heading">
-                    <span class="eyebrow">Partner With Us</span>
-                    <h2>Співпраця з Freelance UA</h2>
-                    <p>Ми відкриті до співпраці та обміну лідами. Ви передаєте нам клієнта, ми закриваємо проєкт, ви отримуєте 10% від суми.</p>
+        <div class="section-divider"></div>
+
+        <!-- ═══ PARTNERSHIP ═══ -->
+        <section class="section section--alt" id="partnership">
+            <div class="section__inner">
+                <div class="section__header reveal reveal--blur">
+                    <div class="section__eyebrow">Partner With Us</div>
+                    <h2 class="section__title">Співпраця з Freelance UA</h2>
+                    <p class="section__desc">Ми відкриті до співпраці та обміну лідами. Ви передаєте нам клієнта, ми закриваємо проєкт, ви отримуєте 10% від суми.</p>
                 </div>
-                <div class="steps-grid">
-                    <article class="step-card">
-                        <span class="step-number">1</span>
-                        <h3>Передаєте клієнта</h3>
-                        <p>Ви відправляєте нам ліда або запит на проєкт.</p>
+
+                <div class="process-steps" id="process-steps">
+                    <div class="process-line-wrap">
+                        <svg class="process-line-svg" id="process-line-svg" viewBox="0 0 1000 60" preserveAspectRatio="none" fill="none">
+                            <defs>
+                                <linearGradient id="lineGrad" x1="0" y1="0" x2="1000" y2="0" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#6366F1"/>
+                                    <stop offset="0.35" stop-color="#8B5CF6"/>
+                                    <stop offset="0.65" stop-color="#06B6D4"/>
+                                    <stop offset="1" stop-color="#6366F1"/>
+                                </linearGradient>
+                                <filter id="lineGlow">
+                                    <feGaussianBlur stdDeviation="4" result="blur"/>
+                                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                                <filter id="dotGlow">
+                                    <feGaussianBlur stdDeviation="3" result="blur"/>
+                                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                            </defs>
+                            <path class="process-line-glow" d="M80 30 C250 30, 300 10, 500 30 S750 50, 920 30" stroke="url(#lineGrad)" stroke-width="5" stroke-linecap="round" filter="url(#lineGlow)" opacity="0.3"/>
+                            <path class="process-line-path" id="process-line-path" d="M80 30 C250 30, 300 10, 500 30 S750 50, 920 30" stroke="url(#lineGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                            <circle class="process-line-dot" r="5" fill="#fff" filter="url(#dotGlow)">
+                                <animateMotion dur="2s" begin="indefinite" fill="freeze" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.22 1 0.36 1">
+                                    <mpath href="#process-line-path"/>
+                                </animateMotion>
+                            </circle>
+                        </svg>
+                    </div>
+
+                    <article class="process-step reveal">
+                        <div class="process-step__icon-wrap">
+                            <div class="process-step__icon-glow"></div>
+                            <div class="process-step__icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
+                            <span class="process-step__badge">1</span>
+                        </div>
+                        <h3 class="process-step__title">Передаєте клієнта</h3>
+                        <p class="process-step__desc">Ви відправляєте нам ліда або запит на проєкт.</p>
                     </article>
-                    <article class="step-card">
-                        <span class="step-number">2</span>
-                        <h3>Ми закриваємо проєкт</h3>
-                        <p>Команда Freelance UA реалізує роботу під ключ.</p>
+
+                    <article class="process-step reveal">
+                        <div class="process-step__icon-wrap">
+                            <div class="process-step__icon-glow"></div>
+                            <div class="process-step__icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+                            </div>
+                            <span class="process-step__badge">2</span>
+                        </div>
+                        <h3 class="process-step__title">Ми закриваємо проєкт</h3>
+                        <p class="process-step__desc">Команда Freelance UA реалізує роботу під ключ.</p>
                     </article>
-                    <article class="step-card">
-                        <span class="step-number">3</span>
-                        <h3>Ви отримуєте 10%</h3>
-                        <p>Гарантована винагорода за кожне закрите замовлення.</p>
+
+                    <article class="process-step reveal">
+                        <div class="process-step__icon-wrap">
+                            <div class="process-step__icon-glow"></div>
+                            <div class="process-step__icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                            </div>
+                            <span class="process-step__badge">3</span>
+                        </div>
+                        <h3 class="process-step__title">Ви отримуєте 10%</h3>
+                        <p class="process-step__desc">Гарантована винагорода за кожне закрите замовлення.</p>
                     </article>
                 </div>
-                <div class="partner-pill-list">
-                    <span>агентства</span>
-                    <span>маркетологи</span>
-                    <span>sales managers</span>
-                    <span>фрілансери</span>
-                    <span>проджект менеджери</span>
+
+                <div class="partner-pills reveal">
+                    <span class="partner-pill">агентства</span>
+                    <span class="partner-pill">маркетологи</span>
+                    <span class="partner-pill">sales managers</span>
+                    <span class="partner-pill">фрілансери</span>
+                    <span class="partner-pill">проджект менеджери</span>
                 </div>
             </div>
         </section>
 
-        <section class="section why-us reveal" id="why">
-            <div class="container">
-                <div class="section-heading">
-                    <span class="eyebrow">Чому ми</span>
-                    <h2>Переваги співпраці</h2>
+        <div class="section-divider"></div>
+
+        <!-- ═══ WHY US ═══ -->
+        <section class="section" id="why">
+            <div class="section__inner">
+                <div class="section__header reveal reveal--blur">
+                    <div class="section__eyebrow">Чому ми</div>
+                    <h2 class="section__title">Переваги співпраці</h2>
                 </div>
+
                 <div class="why-grid">
-                    <article class="why-card">
+                    <article class="card why-card reveal">
                         <h3>Швидка комунікація</h3>
                         <p>Ми відповідаємо миттєво та підтримуємо прозорий діалог.</p>
                     </article>
-                    <article class="why-card">
+                    <article class="card why-card reveal">
                         <h3>Сильна команда</h3>
                         <p>Досвідчений колектив розробників, дизайнерів та motion-експертів.</p>
                     </article>
-                    <article class="why-card">
+                    <article class="card why-card reveal">
                         <h3>Робота під ключ</h3>
                         <p>Від ідеї до запуску — комплексний підхід для кожного клієнта.</p>
                     </article>
-                    <article class="why-card">
+                    <article class="card why-card reveal">
                         <h3>Дедлайни</h3>
                         <p>Чіткий план і дотримання дедлайнів на кожному етапі.</p>
                     </article>
-                    <article class="why-card">
+                    <article class="card why-card reveal">
                         <h3>Якість результату</h3>
                         <p>Комерційно ефективні рішення з premium виконанням.</p>
                     </article>
-                    <article class="why-card">
+                    <article class="card why-card reveal">
                         <h3>Digital досвід</h3>
                         <p>Реальні кейси у web, branding, motion та AI відео.</p>
                     </article>
@@ -233,27 +372,39 @@
             </div>
         </section>
 
-        <section class="section cta reveal" id="contact">
-            <div class="container cta__inner">
-                <div class="cta__content">
-                    <span class="eyebrow">Маєте клієнтів або проєкти?</span>
+        <!-- ═══ CTA ═══ -->
+        <section class="cta-section" id="contact">
+            <div class="cta-inner">
+                <div class="cta-content reveal">
+                    <div class="section__eyebrow">Маєте клієнтів або проєкти?</div>
                     <h2>Давайте співпрацювати та масштабуватися разом</h2>
                     <p>Пишіть прямо зараз і отримайте партнерську пропозицію, що працює.</p>
                 </div>
-                <a class="button button--primary button--cta" href="https://t.me/PREMIUM1914" target="_blank" rel="noopener noreferrer"><img class="button__icon" src="css/images/tg.svg" alt="Telegram"> Написати в Telegram</a>
+                <a class="btn btn--primary" href="https://t.me/PREMIUM1914" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                    Написати в Telegram
+                </a>
             </div>
         </section>
+
+
     </main>
 
+    <!-- ═══ FOOTER ═══ -->
     <footer class="footer">
-        <div class="container footer__inner">
+        <div class="footer__inner">
             <div>
-                <p class="footer__brand">Freelance UA © 2026</p>
-                <p class="footer__text">Digital Agency Partner Network</p>
+                <div class="footer__brand">Freelance UA © 2026</div>
+                <div class="footer__sub">Digital Agency Partner Network</div>
             </div>
-            
         </div>
     </footer>
+
+    <!-- ═══ FIXED TELEGRAM CTA ═══ -->
+    <a class="fixed-tg" href="https://t.me/PREMIUM1914" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        Telegram
+    </a>
 
     <script src="script.js"></script>
 </body>
