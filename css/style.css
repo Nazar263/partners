@@ -353,10 +353,11 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
     z-index: 90;
     background: rgba(0,0,0,0.6);
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s;
 }
 
-.mobile-menu-overlay.open { opacity: 1; }
+.mobile-menu-overlay.open { opacity: 1; pointer-events: auto; }
 
 .mobile-menu .nav-link {
     font-size: 1.8rem;
